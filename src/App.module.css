@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+body {
+    background: #2F4858;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-height: 100vh;
+}
+.content {
+    background: #e5e4e2;
+    font-family: 'Nanum Gothic', sans-serif;
+    border:  1px solid black;
+    width: 350px;
+    height: 450px;
+    text-align: center;
+    color: #005B45;
+}
+
+.header{
+    border-bottom: 1px dashed black;
+}
+.icon {
+    font-size: 40px;
+    margin-top: 25px;
+}
+.title {
+    margin-top: 10px;
+    font-size: 25px;
+    
+}
+.des{
+    width: 75%;
+    margin: 0 auto;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.firstContent {
+    margin-top: 30px;
+}
+.inputBox{
+    width: 80%;
+    margin: 10px auto;
+}
+.input {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    background: #c8ccd8;
+}
+.select{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    background: #c8ccd8;
+    width: 100%;
+}
+
+.secondContent {
+    border-top: 2px dotted #ccc;
+    margin-top: 30px;
+}
+.subTitle {
+    margin-bottom: 0;
+}
+.btn{
+    display: inline-block;
+    padding: 5px 10px;
+    color: #b2876f;
+    font-weight: bold;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #b2876f;
+    border-radius: 10px;
+}
+.btn:hover{    
+    color: black;
+}

@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# REACT MINI PROJECT - 코인? 얼마면 돼?
+## 1. 소개
+---
+환율 API(http://api.currencylayer.com)와 가상화폐 API(https://api.coinpaprika.com)를 이용해 만든 초미니 프로젝트 '코인? 얼마면 돼?(Coin? How much is?)'입니다. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+가진 금액(원화)를 입력하면, 데일리로 바뀌는 환율 API를 통해 오늘의 환율이 적용된 달러로 바꿔서 보여줍니다. <br/>
+총 500개의 코인 목록 중 원하는 코인을 선택하고 조회 버튼을 클릭하면, 자신이 가진 금액으로 살 수 있는 코인 개수가 출력됩니다.
 
-## Available Scripts
+## 2. 데모
+---
+<img width="100%" src="https://user-images.githubusercontent.com/90023273/162621186-b1116548-1415-4ab1-a0d1-23fb64341e92.gif"/>
 
-In the project directory, you can run:
 
-### `npm start`
+## 3. Skills
+---
+* ReactJS
+    - 함수형 컴포넌트
+    - Hooks(useState, useEffect)
+    - CSS Module
+    - 외부 API 연동
+* HTML
+* CSS
+* Javescript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

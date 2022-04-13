@@ -5,7 +5,7 @@ function Money(props) {
     const [loading, setLoading] = useState(true);
     const [coins, setCoins] = useState([]) // 빈 배열을 초깃값으로 해서 undefined가 뜨지 않게 함.
     const [coinUsd, setCoinUsd] = useState(0);
-    const [numCoin, setNumCoin] = useState(0);
+    const [numCoin, setNumCoin] = useState('');
     useEffect( () => {
         fetch('https://api.coinpaprika.com/v1/tickers?limit=500')
         .then((response) => response.json())
@@ -22,6 +22,7 @@ function Money(props) {
     const onChangeNum = () => {
         setNumCoin(((props.won) / (props.moneys.quotes.USDKRW)) / (coinUsd));
     }
+    const reset= () => setNumCoin('');
     console.log(props.won);
     
     console.log(coinUsd)
@@ -32,7 +33,7 @@ function Money(props) {
                 <div className={style.inputBox}>
                 {loading ? <strong>Loading...</strong> : 
                 <select className={style.select}  onChange={onChange}>
-                    <option>코인을 선택하세요</option>
+                    <option selected={numCoin == '' ? true : false}>코인을 선택하세요</option>
                     {coins.map((coin) => 
                     <option key={coin.id} value={coin.quotes.USD.price}>
                         {coin.name} ({coin.symbol}): {coin.quotes.USD.price}
@@ -41,12 +42,12 @@ function Money(props) {
                 </select>}
                 </div>
                 <div className={style.inputBox}>
-                    <label htmlFor="numCoin">살 수 있는 갯수:</label>
-                    <input className={style.input} id="numCoin" type="text" placeholder="과연 몇개 살 수 있을까?" 
+                    <label htmlFor="numCoin">개수:</label>
+                    <input className={`${style.input} ${style.coinInput}`} id="numCoin" type="text" placeholder="과연 몇개 살 수 있을까?" 
                     value={numCoin} disabled/>개
-                    <button className={style.btn} onClick={onChangeNum}>조회</button>
                 </div>
-                
+                <button className={style.btn} onClick={onChangeNum}>조회</button>
+                <button className={style.btn} onClick={reset}>Reset</button>
             </div>
         </div>
     ) 

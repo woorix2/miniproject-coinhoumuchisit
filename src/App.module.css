@@ -42,11 +42,30 @@ body {
 }
 
 .firstContent {
+    margin: 0 auto;
     margin-top: 30px;
+    width: 90%;
+    text-align: center;
 }
+.priceInput {
+    width: 175px;
+}
+.usdInput {
+    width: 188px;
+}
+
 .inputBox{
     width: 80%;
     margin: 10px auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.inputBox1{
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
 }
 .input {
     outline: none;
@@ -66,10 +85,13 @@ body {
 
 .secondContent {
     border-top: 2px dotted #ccc;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .subTitle {
     margin-bottom: 0;
+}
+.coinInput {
+    width: 200px;
 }
 .btn{
     display: inline-block;

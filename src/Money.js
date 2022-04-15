@@ -46,7 +46,7 @@ function Money(props) {
                     <input className={`${style.input} ${style.coinInput}`} id="numCoin" type="text" placeholder="과연 몇개 살 수 있을까?" 
                     value={numCoin} disabled/>개
                 </div>
-                <button className={style.btn} onClick={onChangeNum}>조회</button>
+                <button className={style.btn} onClick={onChangeNum}>Check</button>
                 <button className={style.btn} onClick={reset}>Reset</button>
             </div>
         </div>

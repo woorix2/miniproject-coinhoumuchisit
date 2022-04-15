@@ -19,9 +19,13 @@ function App(){
     } ,[])
   
   const onChange = (e) => {
-    setAmount(e.target.value);
+    const value = e.target.value;
+    const removedCommaValue = Number(value.replaceAll(",", ""));
+    setAmount(removedCommaValue.toLocaleString());
   }
   const reset= () => setAmount('');
+  
+  const removeComma = parseInt(amount.replace(/,/g , ''));
 
   return (
     <div className={style.wrapper}>
@@ -34,18 +38,18 @@ function App(){
         <div className={style.firstContent}>
           <div className={style.inputBox1}>
               <label htmlFor="won">금액(원):</label>
-              <input className={`${style.input} ${style.priceInput}`} value={amount} id="won" placeholder="WON" type="number" onChange={onChange} />
+              <input className={`${style.input} ${style.priceInput}`} value={amount} id="won" placeholder="WON" type="text" onChange={onChange} />
           </div>
           <div className={style.inputBox1}>
               <label htmlFor="dollor">USD:</label>
               <input className={`${style.input} ${style.usdInput}`} defaultValue={ loading ? "" : 
-              (amount === '') ? "" : amount / moneys.quotes.USDKRW} 
+              (amount === '') ? "" : removeComma / moneys.quotes.USDKRW} 
               id="dollor" placeholder="USD" type="text"/>
           </div>
           <button className={style.btn} onClick={reset}>Reset</button>
         </div>
         
-        <Money won={amount} moneys={moneys} />
+        <Money won={removeComma} moneys={moneys} />
       </div>
     </div>
   )

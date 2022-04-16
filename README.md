@@ -8,7 +8,7 @@
 
 ## 2. 데모
 ---
-<img width="100%" src="https://user-images.githubusercontent.com/90023273/163395295-6cbe9eb3-c774-4732-881a-766068752df0.gif"/>
+<img width="100%" src="https://user-images.githubusercontent.com/90023273/163673554-bb581895-ce1f-4628-b4fc-9c62fac74db6.gif"/>
 
 
 ## 3. Skills

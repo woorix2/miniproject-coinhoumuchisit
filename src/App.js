@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Money from "./Money";
 import style from './App.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,6 +8,7 @@ function App(){
   const [loading, setLoading] = useState(true);
   const [moneys, setMoneys] = useState([]);
   const [amount, setAmount] = useState('');
+  const inputRef = useRef();
 
   useEffect( () => {
       fetch(`http://api.currencylayer.com/live?access_key=cacc01bd9144e3546bed9bf5e74cb390&format=1`)
@@ -15,6 +16,7 @@ function App(){
       .then((json) => { 
           setMoneys(json)
           setLoading(false)
+          inputRef.current.focus();
       })
     } ,[])
   
@@ -23,7 +25,10 @@ function App(){
     const removedCommaValue = Number(value.replaceAll(",", ""));
     setAmount(removedCommaValue.toLocaleString());
   }
-  const reset= () => setAmount('');
+  const reset= () => {
+    setAmount('');
+    inputRef.current.focus();
+  }
   
   const removeComma = parseInt(amount.replace(/,/g , ''));
 
@@ -38,7 +43,7 @@ function App(){
         <div className={style.firstContent}>
           <div className={style.inputBox1}>
               <label htmlFor="won">금액(원):</label>
-              <input className={`${style.input} ${style.priceInput}`} value={amount} id="won" placeholder="WON" type="text" onChange={onChange} />
+              <input ref={inputRef} className={`${style.input} ${style.priceInput}`} value={amount} id="won" placeholder="WON" type="text" onChange={onChange} />
           </div>
           <div className={style.inputBox1}>
               <label htmlFor="dollor">USD:</label>
@@ -49,7 +54,7 @@ function App(){
           <button className={style.btn} onClick={reset}>Reset</button>
         </div>
         
-        <Money won={removeComma} moneys={moneys} />
+        <Money amount={amount} won={removeComma} moneys={moneys} />
       </div>
     </div>
   )

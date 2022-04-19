@@ -17,15 +17,12 @@ function Money(props) {
 
     const onChange = (e) => {
         setCoinUsd(e.target.value);
-        console.log(e.target.value)
     }
     const onChangeNum = () => {
         setNumCoin(((props.won) / (props.moneys.quotes.USDKRW)) / (coinUsd));
     }
     const reset= () => setNumCoin('');
-    console.log(props.won);
     
-    console.log(coinUsd)
     return (
         <div>
             <div className={style.secondContent} >
@@ -33,7 +30,7 @@ function Money(props) {
                 <div className={style.inputBox}>
                 {loading ? <strong>Loading...</strong> : 
                 <select className={style.select}  onChange={onChange}>
-                    <option selected={numCoin == '' ? true : false}>코인을 선택하세요</option>
+                    <option selected={numCoin === '' ? true : false}>코인을 선택하세요</option>
                     {coins.map((coin) => 
                     <option key={coin.id} value={coin.quotes.USD.price}>
                         {coin.name} ({coin.symbol}): {coin.quotes.USD.price}

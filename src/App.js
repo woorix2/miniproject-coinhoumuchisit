@@ -18,6 +18,9 @@ function App(){
           setLoading(false)
           inputRef.current.focus();
       })
+      .catch( err => {
+        console.log(err);
+      })
     } ,[])
   
   const onChange = (e) => {

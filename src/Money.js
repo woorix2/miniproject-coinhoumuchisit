@@ -19,6 +19,9 @@ function Money(props) {
         setCoinUsd(e.target.value);
     }
     const onChangeNum = () => {
+        if(props.amount.length < 1) {
+            alert("금액을 입력하세요");
+        }
         setNumCoin(((props.won) / (props.moneys.quotes.USDKRW)) / (coinUsd));
     }
     const reset= () => setNumCoin('');

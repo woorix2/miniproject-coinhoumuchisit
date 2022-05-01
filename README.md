@@ -15,12 +15,12 @@
 ---
 * ReactJS
     - 함수형 컴포넌트
-    - Hooks(useState, useEffect)
+    - Hooks(useState, useEffect, useRef)
     - CSS Module
     - 외부 API 연동
 * HTML
 * CSS
-* Javescript
+* Javascript
 
 
 

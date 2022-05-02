@@ -8,6 +8,7 @@ function App(){
   const [loading, setLoading] = useState(true);
   const [moneys, setMoneys] = useState([]);
   const [amount, setAmount] = useState('');
+  const [usd, setUsd] = useState('');
   const inputRef = useRef();
 
   useEffect( () => {
@@ -24,16 +25,22 @@ function App(){
     } ,[])
   
   const onChange = (e) => {
+    e.preventDefault();
     const value = e.target.value;
     const removedCommaValue = Number(value.replaceAll(",", ""));
     setAmount(removedCommaValue.toLocaleString());
   }
   const reset= () => {
     setAmount('');
+    setUsd('');
     inputRef.current.focus();
   }
   
   const removeComma = parseInt(amount.replace(/,/g , ''));
+
+  const getUSD = () => {
+    setUsd( loading ? "" : (amount === '') ? "" : removeComma / moneys.quotes.USDKRW);
+  }
 
   return (
     <div className={style.wrapper}>
@@ -46,14 +53,27 @@ function App(){
         <div className={style.firstContent}>
           <div className={style.inputBox1}>
               <label htmlFor="won">금액(원):</label>
-              <input ref={inputRef} className={`${style.input} ${style.priceInput}`} value={amount} id="won" placeholder="WON" type="text" onChange={onChange} />
+              <input 
+              ref={inputRef} 
+              className={`${style.input} ${style.priceInput}`} 
+              value={amount} 
+              id="won" 
+              placeholder="WON" 
+              type="text" 
+              onChange={onChange} />
           </div>
           <div className={style.inputBox1}>
               <label htmlFor="dollor">USD:</label>
-              <input className={`${style.input} ${style.usdInput}`} defaultValue={ loading ? "" : 
-              (amount === '') ? "" : removeComma / moneys.quotes.USDKRW} 
-              id="dollor" placeholder="USD" type="text"/>
+              <input 
+              className={`${style.input} ${style.usdInput}`} 
+              // defaultValue={ loading ? "" : (amount === '') ? "" : removeComma / moneys.quotes.USDKRW}
+              defaultValue={usd}
+              id="dollor" 
+              placeholder="USD" 
+              type="text"
+              readOnly/>
           </div>
+          <button className={style.btn} onClick={getUSD} >Check</button>
           <button className={style.btn} onClick={reset}>Reset</button>
         </div>
         

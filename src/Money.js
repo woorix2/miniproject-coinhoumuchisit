@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import style from './App.module.css';
 
-function Money(props) {
+const Money = (props) => {
     const [loading, setLoading] = useState(true);
     const [coins, setCoins] = useState([]) // 빈 배열을 초깃값으로 해서 undefined가 뜨지 않게 함.
     const [coinUsd, setCoinUsd] = useState(0);
     const [numCoin, setNumCoin] = useState('');
+
     useEffect( () => {
         fetch('https://api.coinpaprika.com/v1/tickers?limit=500')
         .then((response) => response.json())
         .then((json) => { 
         setCoins(json)
         setLoading(false)
+        console.log("fetch")
         })
     } ,[])
 
@@ -26,6 +28,8 @@ function Money(props) {
     }
     const reset= () => setNumCoin('');
     
+    console.log("머니 컴포넌트 리렌더1");
+
     return (
         <div>
             <div className={style.secondContent} >
@@ -51,5 +55,5 @@ function Money(props) {
             </div>
         </div>
     ) 
-}
-export default Money;
+};
+export default React.memo(Money);

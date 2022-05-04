@@ -8,7 +8,7 @@
 
 ## 2. 데모
 ---
-<img width="100%" src="https://user-images.githubusercontent.com/90023273/163673554-bb581895-ce1f-4628-b4fc-9c62fac74db6.gif"/>
+<img width="100%" src="https://user-images.githubusercontent.com/90023273/166705274-c8e519c2-4261-485b-9810-3693caab0670.gif"/>
 
 
 ## 3. Skills
@@ -16,6 +16,7 @@
 * ReactJS
     - 함수형 컴포넌트
     - Hooks(useState, useEffect, useRef)
+    - React.Memo
     - CSS Module
     - 외부 API 연동
 * HTML

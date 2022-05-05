@@ -25,7 +25,6 @@ function App(){
     } ,[])
   
   const onChange = (e) => {
-    e.preventDefault();
     const value = e.target.value;
     const removedCommaValue = Number(value.replaceAll(",", ""));
     setAmount(removedCommaValue.toLocaleString());
@@ -65,8 +64,7 @@ function App(){
           <div className={style.inputBox1}>
               <label htmlFor="dollor">USD:</label>
               <input 
-              className={`${style.input} ${style.usdInput}`} 
-              // defaultValue={ loading ? "" : (amount === '') ? "" : removeComma / moneys.quotes.USDKRW}
+              className={`${style.input} ${style.usdInput}`}
               defaultValue={usd}
               id="dollor" 
               placeholder="USD" 

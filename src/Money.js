@@ -17,7 +17,7 @@ const Money = (props) => {
         })
     } ,[])
 
-    const onChange = (e) => {
+    const getCoin = (e) => {
         setCoinUsd(e.target.value);
     }
     const onChangeNum = () => {
@@ -27,8 +27,6 @@ const Money = (props) => {
         setNumCoin(((props.won) / (props.moneys.quotes.USDKRW)) / (coinUsd));
     }
     const reset= () => setNumCoin('');
-    
-    console.log("머니 컴포넌트 리렌더1");
 
     return (
         <div>
@@ -36,7 +34,7 @@ const Money = (props) => {
                 <h3 className={style.subTitle}>{ loading ? "" : `전체 ${coins.length}개의 코인`}</h3>
                 <div className={style.inputBox}>
                 {loading ? <strong>Loading...</strong> : 
-                <select className={style.select}  onChange={onChange}>
+                <select className={style.select}  onChange={getCoin}>
                     <option selected={numCoin === '' ? true : false}>코인을 선택하세요</option>
                     {coins.map((coin) => 
                     <option key={coin.id} value={coin.quotes.USD.price}>

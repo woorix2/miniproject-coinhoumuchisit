@@ -24,7 +24,7 @@ function App(){
       })
     } ,[])
   
-  const onChange = (e) => {
+  const getWon = (e) => {
     const value = e.target.value;
     const removedCommaValue = Number(value.replaceAll(",", ""));
     setAmount(removedCommaValue.toLocaleString());
@@ -59,7 +59,7 @@ function App(){
               id="won" 
               placeholder="WON" 
               type="text" 
-              onChange={onChange} />
+              onChange={getWon} />
           </div>
           <div className={style.inputBox1}>
               <label htmlFor="dollor">USD:</label>

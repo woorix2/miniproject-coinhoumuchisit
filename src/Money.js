@@ -35,7 +35,7 @@ const Money = (props) => {
                 <div className={style.inputBox}>
                 {loading ? <strong>Loading...</strong> : 
                 <select className={style.select}  onChange={getCoin}>
-                    <option selected={numCoin === '' ? true : false}>코인을 선택하세요</option>
+                    <option defaultValue={numCoin === '' ? true : false}>코인을 선택하세요</option>
                     {coins.map((coin) => 
                     <option key={coin.id} value={coin.quotes.USD.price}>
                         {coin.name} ({coin.symbol}): {coin.quotes.USD.price}

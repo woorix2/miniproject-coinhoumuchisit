@@ -27,7 +27,7 @@ function App(){
   const getWon = (e) => {
     const value = e.target.value;
     const removedCommaValue = Number(value.replaceAll(",", ""));
-    setAmount(removedCommaValue.toLocaleString());
+    setTimeout(setAmount(removedCommaValue.toLocaleString()), 1000);
   }
   const reset= () => {
     setAmount('');

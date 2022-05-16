@@ -1,8 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import Money from "./Money";
 import style from './App.module.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBitcoinSign } from "@fortawesome/free-solid-svg-icons";
+import Coin from './coin.png'
 
 function App(){
   const [loading, setLoading] = useState(true);
@@ -45,7 +44,7 @@ function App(){
     <div className={style.wrapper}>
       <div className={style.content}>
         <div className={style.header}>
-        <FontAwesomeIcon icon={ faBitcoinSign } className={style.icon}/>
+        <img src={Coin} alt="로고이미지" className={style.icon}/>
         <h1 className={style.title}> 코인? 얼마면 돼? </h1>
         <p className={style.des}>가진 돈을 달러로 환산해 원하는 코인을 몇 개나 살 수 있는지 알아보세요!</p>
         </div>

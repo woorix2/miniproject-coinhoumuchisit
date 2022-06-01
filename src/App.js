@@ -8,6 +8,7 @@ function App() {
   const [moneys, setMoneys] = useState([]);
   const [amount, setAmount] = useState("");
   const [usd, setUsd] = useState("");
+  const [formIsValid, setFormIsValid] = useState(true);
   const inputRef = useRef();
 
   useEffect(() => {
@@ -25,6 +26,10 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    setFormIsValid(amount.length === 0 ? false : true);
+  }, [amount]);
+
   const getWon = (e) => {
     const value = e.target.value;
     const removedCommaValue = Number(value.replaceAll(",", ""));
@@ -39,6 +44,9 @@ function App() {
   const removeComma = parseInt(amount.replace(/,/g, ""));
 
   const getUSD = () => {
+    if (formIsValid === false || amount == "0") {
+      alert("금액을 1만원 이상 입력해주세요");
+    }
     setUsd(
       loading ? "" : amount === "" ? "" : removeComma / moneys.quotes.USDKRW
     );
